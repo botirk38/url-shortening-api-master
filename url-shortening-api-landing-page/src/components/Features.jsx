@@ -4,7 +4,7 @@ import fullyCustomizable from '../assets/images/icon-fully-customizable.svg';
 
 function Features(){
     return(
-        <section className=" relative grid grid-cols-1 z-50 gap-[8rem] mt-20 sm:mb-20 lg:mb-40 grid-rows-auto place-items-center text-center w-full h-auto bg-[#F2F2F2]  sm:p-5 sm:gap-10 ">
+        <section className=" relative grid grid-cols-1 z-50 gap-[8rem]  sm:mb-20 lg:mb-40 grid-rows-auto place-items-center text-center w-full h-auto bg-[#F2F2F2]  sm:p-5 sm:gap-10 ">
             <div className="flex flex-col justify-center items-center p-5">
                 <h2 className="text-4xl font-bold text-primary-dark-violet mb-6">Advanced Statistics</h2>
                 <p className="text-base font-normal text-neutral-gray p-3 ">Track how your links are performing across the web with our advanced statistics dashboard.</p>
