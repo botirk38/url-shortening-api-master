@@ -44,7 +44,7 @@ function Navbar() {
 
        {/* Desktop Menu */}
        <nav className="hidden sm:flex sm:space-x-20 sm:items-start sm:justify-between sm:text-neutral-gray sm:w-full ">
-        <ul className="flex space-x-6 p-6">
+        <ul className="flex space-x-6 p-6 lg:gap-6">
           <a className="hover:cursor-pointer"><img src={logo} alt="Shortly Logo" className="object-contain "/></a>
 
           <li className="text-black font-bold"><a className="hover:text-neutral-very-dark-violet hover:cursor-pointer">Features</a></li>
