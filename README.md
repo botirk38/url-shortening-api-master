@@ -46,8 +46,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/botirk38/url-shortening-api-master)
-- Live Site URL: [Add live site URL here](https://shortly-url-botir.netlify.app/)
+- Solution URL: [Github Code](https://github.com/botirk38/url-shortening-api-master)
+- Live Site URL: [Netlify Site](https://shortly-url-botir.netlify.app/)
 
 ## My process
 
