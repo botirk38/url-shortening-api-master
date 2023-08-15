@@ -1,18 +1,6 @@
-let fetch;
+import fetch from 'node-fetch';
 
-import('node-fetch').then(module => {
-  fetch = module.default;
-});
-
-
-exports.handler = async function(event, context) {
-    if (event.httpMethod !== 'POST') {
-        return {
-            statusCode: 405,
-            body: 'Method Not Allowed'
-        };
-    }
-
+const handler = async (event, context) => {
     const { url } = JSON.parse(event.body);
 
     const API_ENDPOINT = `https://api.shrtco.de/v2/shorten?url=${url}`;
@@ -26,10 +14,12 @@ exports.handler = async function(event, context) {
             body: JSON.stringify(data),
         };
     }
-    catch (error) {
+    catch (error) {a
         return {
             statusCode: 500,
             body: JSON.stringify({ error: error.message }),
         };
     }
 };
+
+export { handler };
