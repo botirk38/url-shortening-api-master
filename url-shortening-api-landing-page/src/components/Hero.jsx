@@ -19,9 +19,9 @@ function Hero({setLinkData}) {
                     <img src={heroImg} alt="Illustration of a person working on a computer" className="ml-20 object-cover w-full lg:ml-40"/>
                 </picture>
 
-                <div className="flex flex-col justify-center items-center text-center mb-10 p-3 sm:items-start sm:text-start lg:p-10">
+                <div className="flex flex-col justify-center items-center text-center mb-10 p-3 sm:items-start sm:text-start lg:p-10 lg:ml-5">
 
-                <h1 className="text-4xl font-bold text-primary-dark-violet mb-4 lg:text-6xl">More than just shorter links</h1>
+                <h1 className="text-4xl font-bold text-primary-dark-violet mb-4 lg:text-7xl">More than just shorter links</h1>
                 <p className='text-base lg:text-lg font-normal text-neutral-gray'>Build your brand’s recognition and get detailed insights on how your links are performing.</p>
                 <button className="bg-primary-cyan rounded-3xl p-2 mt-6 w-40 text-white lg:p-3">Get Started</button>
                 </div>
