@@ -7,7 +7,7 @@ function ShortenedLinks({ links = [] }) {
   
 
   return (
-    <section className="grid grid-cols-1 gap-6 mt-40 grid-rows-auto place-items-center text-center w-full sm:w-screen sm:py-0 h-auto sm:grid-rows-1 sm:px-10 ">
+    <section className="grid grid-cols-1 gap-6 mt-40 grid-rows-auto place-items-center text-center w-full sm:w-screen  h-auto sm:grid-rows-1  ">
       {links.map((linkData, index) => {
         console.log(linkData)
 
@@ -20,10 +20,10 @@ function ShortenedLinks({ links = [] }) {
               setCopySuccess('Failed to copy!');
               console.error('Failed to copy text: ', err);
             });
-        };
+        };  
 
         return (
-          <div key={index} className='flex bg-white flex-col rounded-lg w-80 sm:w-2/3 sm:min-h-full justify-center items-start text-start p-6 border-b-2 border-neutral-gray sm:p-0 sm:items-center sm:border-0 sm:flex-row lg:mr-6 '>
+          <div key={index} className='flex bg-white flex-col rounded-lg w-80 mx-2 min-w-fit p-10 sm:min-h-full justify-center items-center text-start p-6 border-b-2 border-neutral-gray sm:p-6 sm:items-center sm:border-0 sm:flex-row lg:mr-6 '>
             <div className='flex flex-col w-full sm:min-h-full justify-center items-start text-start max-w-sm sm:max-w-md py-6 border-b-2 border-neutral-gray sm:p-3 sm:items-center sm:border-0'>
               <p className='text-sm sm:px-3 '>{linkData.longLink}</p>
             </div>
