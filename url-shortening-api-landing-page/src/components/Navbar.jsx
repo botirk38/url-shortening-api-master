@@ -43,7 +43,7 @@ function Navbar() {
 
 
        {/* Desktop Menu */}
-       <nav className="hidden sm:flex sm:space-x-20 sm:items-start sm:justify-between sm:text-neutral-gray sm:w-full ">
+       <nav className="hidden sm:flex sm:gap-20 sm:items-start sm:justify-between sm:text-neutral-gray sm:w-full lg:mx-40 ">
         <ul className="flex space-x-6 p-6 lg:gap-6">
           <li><a className="hover:cursor-pointer"><img src={logo} alt="Shortly Logo" className="object-contain "/></a></li>
 
