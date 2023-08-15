@@ -28,7 +28,7 @@ function Hero({setLinkData}) {
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col justify-center items-center text-center '>
-                <div className="shorten absolute -bottom-[11rem] w-screen max-w-sm bg-primary-dark-violet rounded-lg flex flex-col justify-start  items-center p-6 text-center z-50 sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl sm:-bottom-[9rem] sm:flex-row sm:space-x-8">
+                <div className="shorten absolute mb-20 lg:mb-10 -bottom-[11rem] w-screen max-w-sm bg-primary-dark-violet rounded-lg flex flex-col justify-start  items-center p-6 text-center z-50 sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl sm:-bottom-[9rem] sm:flex-row sm:space-x-8">
                     <div className=" rounded-lg p-4 sm:p-6 flex-grow flex flex-col justify-center items-center sm:items-start">
                     <input
                         type="text"
