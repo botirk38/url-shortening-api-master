@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 function useShortenLink(longLink) {
   return useQuery(
-    ['linkData', longLink], // queryKey is now an array including longLink
+    ['linkData', longLink],
     () => fetch('/.netlify/functions/shortenLink', {
       method: 'POST',
       headers: {
@@ -10,7 +10,11 @@ function useShortenLink(longLink) {
       },
       body: JSON.stringify({ url: longLink }),
     }).then((res) => res.json()),
-    { enabled: !!longLink } // only run the query if longLink is defined
+    {
+      enabled: !!longLink, // only run the query if longLink is defined
+      staleTime: Infinity, // prevent automatic refetching when the data is stale
+      cacheTime: Infinity, // keep the data in the cache indefinitely
+    }
   );
 }
 
