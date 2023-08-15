@@ -1,6 +1,13 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-const handler = async (event, context) => {
+exports.handler = async function(event, context) {
+    if (event.httpMethod !== 'POST') {
+        return {
+            statusCode: 405,
+            body: 'Method Not Allowed'
+        };
+    }
+
     const { url } = JSON.parse(event.body);
 
     const API_ENDPOINT = `https://api.shrtco.de/v2/shorten?url=${url}`;
@@ -21,5 +28,3 @@ const handler = async (event, context) => {
         };
     }
 };
-
-export { handler };
