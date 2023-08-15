@@ -1,25 +1,20 @@
-import fetch from 'node-fetch';
+const axios = require('axios');
 
-const handler = async (event, context) => {
+exports.handler = async (event, context) => {
     const { url } = JSON.parse(event.body);
 
     const API_ENDPOINT = `https://api.shrtco.de/v2/shorten?url=${url}`;
 
     try {
-        const response = await fetch(API_ENDPOINT);
-        const data = await response.json();
-
+        const response = await axios.get(API_ENDPOINT);
         return {
             statusCode: 200,
-            body: JSON.stringify(data),
+            body: JSON.stringify(response.data),
         };
-    }
-    catch (error) {a
+    } catch (error) {
         return {
             statusCode: 500,
             body: JSON.stringify({ error: error.message }),
         };
     }
 };
-
-export { handler };
