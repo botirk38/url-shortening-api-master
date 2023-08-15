@@ -20,9 +20,9 @@ function ShortenedLinks({ linkData = { longLink: '', short_link: '' } }) {
       return (
         <section className="grid grid-cols-1 mt-40 grid-rows-auto place-items-center text-center w-full  sm:w-screen sm:py-0 h-auto sm:grid-rows-1 sm:px-10 ">
 
-        <div className='flex bg-white flex-col rounded-lg w-80 sm:w-auto sm:min-h-full justify-center items-start text-start  p-6 border-b-2 border-neutral-gray sm:p-0 sm:items-center sm:border-0 sm:flex-row '>
-          <div className='flex  flex-col w-full sm:min-h-full justify-center items-start text-start max-w-sm  sm:max-w-md py-6 border-b-2 border-neutral-gray sm:p-3 sm:items-center sm:border-0 '>
-            <p className='text-sm sm:px-3'>{linkData.longLink}</p>
+        <div className='flex bg-white flex-col rounded-lg w-80 sm:w-auto sm:min-h-full justify-center items-start text-start  p-6 border-b-2 border-neutral-gray sm:p-0 sm:items-center sm:border-0 sm:flex-row lg:mr-6 '>
+          <div className='flex  flex-col w-full sm:min-h-full justify-center items-start text-start max-w-sm  sm:max-w-md py-6 border-b-2 border-neutral-gray sm:p-3 sm:items-center sm:border-0  '>
+            <p className='text-sm sm:px-3 '>{linkData.longLink}</p>
           </div>
   
           <div className='flex flex-col  w-full justify-center items-start text-start max-w-sm sm:max-w-md sm:space-x-2 py-6 sm:flex-row sm:items-center  sm:p-3'>
