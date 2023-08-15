@@ -1,37 +1,22 @@
-import { useMutation, useQueryClient } from 'react-query';
 import Hero from './Hero';
 import ShortenedLinks from './ShortenedLinks';
+import { useState } from 'react';
+import useShortenLink from '../hooks/useShortenLink';
 
 function HeroForm() {
+  const [longLink, setLongLink] = useState('');
+  const { data: linkResponse } = useShortenLink(longLink);
+  const shortLink = linkResponse?.result?.short_link; // Extract short link from response
 
-  const shortenLink = (longLink) =>
-  fetch('/.netlify/functions/shortenLink', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ url: longLink }),
-  }).then((res) => res.json());
-
-
-  // Access the client
-  const queryClient = useQueryClient();
-
-  // Mutations
-  const mutation = useMutation({
-    mutationFn: shortenLink,
-    onSuccess: (data) => {
-      // Update the query data with the new short link
-      queryClient.setQueryData(['linkData'], data);
-    },
-  });
-
-  const handleShortenLink = (longLink) => {
-    mutation.mutate(longLink);
+  const handleShortenLink = (newLongLink) => {
+    setLongLink(newLongLink);
+    console.log(newLongLink);
   };
 
-  // Retrieve the linkData from query cache
-  const linkData = queryClient.getQueryData(['linkData']);
+  const linkData = {
+    longLink: longLink, // Pass the long link from state
+    short_link: shortLink, // Pass the extracted short link
+  };
 
   return (
     <>
@@ -40,5 +25,6 @@ function HeroForm() {
     </>
   );
 }
+
 
 export default HeroForm;

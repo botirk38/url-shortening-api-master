@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-function ShortenedLinks({ linkData }) {
+function ShortenedLinks({ linkData = { longLink: '', short_link: '' } }) {
+    console.log("Shortened Links:", linkData.longLink, linkData.short_link);
     const [copySuccess, setCopySuccess] = useState('');
   
     const handleCopyClick = () => {
-      navigator.clipboard.writeText(linkData.shortLink)
+      navigator.clipboard.writeText(linkData.short_link)
         .then(() => {
           setCopySuccess('Copied!');
         })
@@ -15,7 +16,7 @@ function ShortenedLinks({ linkData }) {
         });
     };
   
-    if (linkData.longLink && linkData.shortLink) {
+    if (linkData.longLink && linkData.short_link) {
       return (
         <section className="grid grid-cols-1 mt-40 grid-rows-auto place-items-center text-center w-full  sm:w-screen sm:py-0 h-auto sm:grid-rows-1 sm:px-10 ">
 
@@ -25,20 +26,26 @@ function ShortenedLinks({ linkData }) {
           </div>
   
           <div className='flex flex-col  w-full justify-center items-start text-start max-w-sm sm:max-w-md sm:space-x-2 py-6 sm:flex-row sm:items-center  sm:p-3'>
-            <p className='text-primary-cyan text-sm '>{linkData.shortLink}</p>
+            <p className='text-primary-cyan text-sm '>{linkData.short_link}</p>
             <button onClick={handleCopyClick} className={`rounded-lg p-4 mt-6 w-full text-white sm:p-2 sm:mt-0  bg-primary-cyan ${copySuccess ? "bg-neutral-very-dark-violet" :"bg-primary-cyan"}`}>{copySuccess ? "Copied" : "Copy"}</button>
           </div>
         </div>
   
         </section>
       );
+      
     }
+
+    if (!linkData || !linkData.longLink || !linkData.short_link) {
+      return null; // or some placeholder
+    }
+    
   
-    return null; // Render nothing if linkData does not have both longLink and shortLink
+    
   }
   
   ShortenedLinks.propTypes = {
-    linkData: PropTypes.object.isRequired
+    linkData: PropTypes.object
   };
   
   export default ShortenedLinks;
